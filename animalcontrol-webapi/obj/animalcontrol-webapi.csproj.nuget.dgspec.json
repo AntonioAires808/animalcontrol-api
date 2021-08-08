@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {}
+    "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {}
   },
   "projects": {
-    "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {
+    "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
+        "projectUniqueName": "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
         "projectName": "animalcontrol-webapi",
-        "projectPath": "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
+        "projectPath": "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\obj\\",
+        "outputPath": "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

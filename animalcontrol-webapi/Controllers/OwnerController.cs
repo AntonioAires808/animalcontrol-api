@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace animalcontrol_webapi.Controllers
@@ -8,7 +9,16 @@ namespace animalcontrol_webapi.Controllers
     {
         public IActionResult Get()
         {
-            return BadRequest("Antonio");
+            try
+            {
+                throw new Exception("test");
+            }
+            catch (Exception e)
+            {
+                                
+                return BadRequest($"Error: {e.Message}");
+            }
+
         }
     }
 }
