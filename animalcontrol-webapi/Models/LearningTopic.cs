@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace animalcontrol_webapi.Models
 {
     public class LearningTopic
@@ -6,19 +8,16 @@ namespace animalcontrol_webapi.Models
         {
             
         }
-
-        public LearningTopic(int id, string topicName, string description, int ownerId)
+        public LearningTopic(int id, string name, int OwnerId)
         {
             this.Id = id;
-            this.TopicName = topicName;
-            this.Description = description;
-            this.OwnerId = ownerId;
+            this.Name = name;
+            this.OwnerId = OwnerId;
         }
-
         public int Id { get; set; }
-        public string TopicName { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; }
         public int OwnerId { get; set; }
         public Owner Owner { get; set; }
+        public IEnumerable<AnimalLearning> AnimalLearnings { get; set; }      
     }
 }

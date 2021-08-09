@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {}
+    "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {}
   },
   "projects": {
-    "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {
+    "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
+        "projectUniqueName": "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
         "projectName": "animalcontrol-webapi",
-        "projectPath": "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
+        "projectPath": "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\animalcontrol-webapi.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "f:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\obj\\",
+        "outputPath": "F:\\Programming\\backend\\animalcontrol-api\\animalcontrol-webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,18 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.8, )"
             },

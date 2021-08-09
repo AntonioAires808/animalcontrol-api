@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\animalcontrol-webapi",
+    "\\animalcontrol-webapi\\bin\\Debug",
+    "\\animalcontrol-webapi\\bin\\Debug\\net5.0",
+    "\\animalcontrol-webapi\\Controllers",
+    "\\animalcontrol-webapi\\Data",
+    "\\animalcontrol-webapi\\Models"
+  ],
+  "SelectedNode": "\\animalcontrol-webapi\\bin",
+  "PreviewInSolutionExplorer": false
+}

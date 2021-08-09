@@ -8,7 +8,6 @@ namespace animalcontrol_webapi.Models
         {
             
         }
-
         public Owner(int id, string name, string address, string schedule)
         {
             this.Id = id;
@@ -16,11 +15,13 @@ namespace animalcontrol_webapi.Models
             this.Address = address;
             this.Schedule = schedule;
         }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Schedule { get; set; }
-        public IEnumerable<LearningTopic> LearningTopic {get; set;}
+        public IEnumerable<LearningTopic> LearningTopics { get; set; }
+
+        // Reference to animal
+        public IEnumerable<Animal> Animals { get; set; }            
     }
 }

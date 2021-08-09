@@ -6,35 +6,33 @@ namespace animalcontrol_webapi.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base (options) 
-        {
+        public DataContext(DbContextOptions<DataContext> options) : base (options) { }        
+        public DbSet<Animal> Animals { get; set; }
+        public DbSet<Owner> Owners { get; set; }
+        public DbSet<LearningTopic> LearningTopics { get; set; }
+        public DbSet<AnimalLearning> AnimalsLearningTopics { get; set; }
 
-        }        
-
-        public DbSet<Animal> Animals {get; set;}
-        public DbSet<Owner> Owners {get; set;}
-        public DbSet<LearningTopic> LearningTopics {get; set;}
-        public DbSet<AnimalLearning> AnimalLearnings {get; set;}
-
-        protected override void OnModelCreating(ModelBuilder builder) 
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<AnimalLearning>()
-                .HasKey(AL => new { AL.AnimalId, AL.LearningTopic});
-            
+                .HasKey(AD => new { AD.AnimalId, AD.LearningTopicId });
+
             builder.Entity<Owner>()
                 .HasData(new List<Owner>(){
                     new Owner(1, "Antonio", "Rua Dr", "9-18h"),
                     new Owner(2, "Susana", "Praceta Iv", "9-18h"),
+                    new Owner(3, "RandomPerson", "N/A", "9-18h"),
+                    new Owner(4, "RandomPerson2", "N/A", "9-18h")
                 });
-
+            
             builder.Entity<LearningTopic>()
-                .HasData(new List<LearningTopic>(){
-                    new LearningTopic(1, "Food", "Teach pet eating rules", 1),
-                    new LearningTopic(2, "Walk", "Teach pet how to walk on leash", 2),
-                    new LearningTopic(3, "Sit", "Teach pet how to sit", 3),
-                    new LearningTopic(4, "Tricks", "Teach awesome tricks", 4)
+                .HasData(new List<LearningTopic>{
+                    new LearningTopic(1, "Food", 1),
+                    new LearningTopic(2, "Walk", 2),
+                    new LearningTopic(3, "Sit", 3),
+                    new LearningTopic(4, "Tricks", 4)
                 });
-
+            
             builder.Entity<Animal>()
                 .HasData(new List<Animal>(){
                     new Animal(1, "Ciri", "Cirigatas", 1204151, 3),
@@ -44,7 +42,7 @@ namespace animalcontrol_webapi.Data
                 });
 
             builder.Entity<AnimalLearning>()
-                .HasData(new List<AnimalLearning>(){
+                .HasData(new List<AnimalLearning>() {
                     new AnimalLearning() { AnimalId = 1, LearningTopicId = 1 },
                     new AnimalLearning() { AnimalId = 1, LearningTopicId = 2 },
                     new AnimalLearning() { AnimalId = 1, LearningTopicId = 3 },
@@ -60,8 +58,8 @@ namespace animalcontrol_webapi.Data
                     new AnimalLearning() { AnimalId = 4, LearningTopicId = 1 },
                     new AnimalLearning() { AnimalId = 4, LearningTopicId = 2 },
                     new AnimalLearning() { AnimalId = 4, LearningTopicId = 3 },
-                    new AnimalLearning() { AnimalId = 4, LearningTopicId = 4 }                    
+                    new AnimalLearning() { AnimalId = 4, LearningTopicId = 4 }                
                 });
-        }
+           }
     }
 }
