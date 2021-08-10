@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using animalcontrol_webapi.Data;
 
 namespace animalcontrol_webapi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210810000519_updateLT3")]
+    partial class updateLT3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -325,7 +327,7 @@ namespace animalcontrol_webapi.Migrations
                         .IsRequired();
 
                     b.HasOne("animalcontrol_webapi.Models.LearningTopic", "LearningTopic")
-                        .WithMany("AnimalLearnings")
+                        .WithMany()
                         .HasForeignKey("LearningTopicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -338,7 +340,7 @@ namespace animalcontrol_webapi.Migrations
             modelBuilder.Entity("animalcontrol_webapi.Models.AnimalOwner", b =>
                 {
                     b.HasOne("animalcontrol_webapi.Models.Animal", "Animal")
-                        .WithMany()
+                        .WithMany("AnimalOwners")
                         .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -368,11 +370,8 @@ namespace animalcontrol_webapi.Migrations
             modelBuilder.Entity("animalcontrol_webapi.Models.Animal", b =>
                 {
                     b.Navigation("AnimalLearnings");
-                });
 
-            modelBuilder.Entity("animalcontrol_webapi.Models.LearningTopic", b =>
-                {
-                    b.Navigation("AnimalLearnings");
+                    b.Navigation("AnimalOwners");
                 });
 
             modelBuilder.Entity("animalcontrol_webapi.Models.Owner", b =>

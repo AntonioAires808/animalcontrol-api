@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using animalcontrol_webapi.Data;
 
 namespace animalcontrol_webapi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210809224223_animalowneradded")]
+    partial class animalowneradded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,7 +92,7 @@ namespace animalcontrol_webapi.Migrations
 
                     b.HasIndex("LearningTopicId");
 
-                    b.ToTable("AnimalLearningTopics");
+                    b.ToTable("AnimalsLearningTopics");
 
                     b.HasData(
                         new
@@ -324,7 +326,7 @@ namespace animalcontrol_webapi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("animalcontrol_webapi.Models.LearningTopic", "LearningTopic")
+                    b.HasOne("animalcontrol_webapi.Models.LearningTopic", "learningTopic")
                         .WithMany("AnimalLearnings")
                         .HasForeignKey("LearningTopicId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -332,13 +334,13 @@ namespace animalcontrol_webapi.Migrations
 
                     b.Navigation("Animal");
 
-                    b.Navigation("LearningTopic");
+                    b.Navigation("learningTopic");
                 });
 
             modelBuilder.Entity("animalcontrol_webapi.Models.AnimalOwner", b =>
                 {
                     b.HasOne("animalcontrol_webapi.Models.Animal", "Animal")
-                        .WithMany()
+                        .WithMany("AnimalOwners")
                         .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -368,6 +370,8 @@ namespace animalcontrol_webapi.Migrations
             modelBuilder.Entity("animalcontrol_webapi.Models.Animal", b =>
                 {
                     b.Navigation("AnimalLearnings");
+
+                    b.Navigation("AnimalOwners");
                 });
 
             modelBuilder.Entity("animalcontrol_webapi.Models.LearningTopic", b =>

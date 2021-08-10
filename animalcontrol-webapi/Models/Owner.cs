@@ -19,9 +19,9 @@ namespace animalcontrol_webapi.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Schedule { get; set; }
-        public IEnumerable<LearningTopic> LearningTopics { get; set; }
-
-        // Reference to animal
+        
+        // Owner can have multiple animals and topics to teach
+        public IEnumerable<LearningTopic> LearningTopics { get; set; }        
         public IEnumerable<Animal> Animals { get; set; }            
     }
 }

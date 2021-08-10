@@ -14,6 +14,6 @@ namespace animalcontrol_webapi.Models
         public int AnimalId { get; set; }
         public Animal Animal { get; set; }
         public int LearningTopicId { get; set; }
-        public LearningTopic learningTopic { get; set; }
+        public LearningTopic LearningTopic { get; set; }
     }
 }

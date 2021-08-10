@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using animalcontrol_webapi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,12 +11,16 @@ namespace animalcontrol_webapi.Data
         public DbSet<Animal> Animals { get; set; }
         public DbSet<Owner> Owners { get; set; }
         public DbSet<LearningTopic> LearningTopics { get; set; }
-        public DbSet<AnimalLearning> AnimalsLearningTopics { get; set; }
+        public DbSet<AnimalLearning> AnimalLearningTopics { get; set; }
+        public DbSet<AnimalOwner> AnimalOwners { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<AnimalLearning>()
-                .HasKey(AD => new { AD.AnimalId, AD.LearningTopicId });
+                .HasKey(AL => new { AL.AnimalId, AL.LearningTopicId });
+
+            builder.Entity<AnimalOwner>()
+                .HasKey(AO => new { AO.AnimalId, AO.OwnerId });
 
             builder.Entity<Owner>()
                 .HasData(new List<Owner>(){
@@ -59,6 +64,14 @@ namespace animalcontrol_webapi.Data
                     new AnimalLearning() { AnimalId = 4, LearningTopicId = 2 },
                     new AnimalLearning() { AnimalId = 4, LearningTopicId = 3 },
                     new AnimalLearning() { AnimalId = 4, LearningTopicId = 4 }                
+                });
+
+            builder.Entity<AnimalOwner>()
+                .HasData(new List<AnimalOwner>(){
+                    new AnimalOwner() { AnimalId = 1, OwnerId = 1 },
+                    new AnimalOwner() { AnimalId = 2, OwnerId = 1 },
+                    new AnimalOwner() { AnimalId = 3, OwnerId = 2 },
+                    new AnimalOwner() { AnimalId = 4, OwnerId = 2 },
                 });
            }
     }
