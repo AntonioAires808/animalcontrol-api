@@ -59,3 +59,9 @@ F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\M
 F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\Newtonsoft.Json.dll
 F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\System.Web.Http.dll
+F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\System.Web.Http.WebHost.dll
+F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\Swashbuckle.Core.dll
+F:\Programming\backend\animalcontrol-api\animalcontrol-webapi\bin\Debug\net5.0\WebActivatorEx.dll

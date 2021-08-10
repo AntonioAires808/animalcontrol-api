@@ -123,7 +123,9 @@ namespace animalcontrol_webapi.Controllers
                 
                 if(await _repo.SaveChangesAsync())
                 {
-                    return Ok(animal);
+                    return Ok(new { 
+                        Message = "Deleted"
+                    });
                 }
             }
             catch (Exception ex)

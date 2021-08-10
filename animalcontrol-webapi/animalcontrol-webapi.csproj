@@ -4,11 +4,12 @@
     <RootNamespace>animalcontrol_webapi</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.8"/>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.8"/>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.8" />
+    <PackageReference Include="Swashbuckle" Version="5.6.0" />
   </ItemGroup>
 </Project>

@@ -25,7 +25,9 @@ namespace animalcontrol_webapi
                 x => x.UseSqlite(Configuration.GetConnectionString("DefaultConn"))
             );
 
-            services.AddControllers();
+            // 
+            services.AddMvc();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "animalcontrol_webapi", Version = "v1" });
@@ -47,11 +49,21 @@ namespace animalcontrol_webapi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "animalcontrol_webapi v1"));
             }
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => {
+                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             // app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {

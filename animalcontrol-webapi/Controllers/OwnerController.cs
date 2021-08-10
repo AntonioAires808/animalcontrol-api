@@ -7,6 +7,7 @@ namespace animalcontrol_webapi.Controllers
     [Route("[controller]")]
     public class OwnerController : ControllerBase
     {
+        [HttpGet]
         public IActionResult Get()
         {
             try
